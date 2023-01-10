@@ -19,6 +19,8 @@ export const Nav = styled.nav`
   padding: 1rem 2rem;
   position: fixed;
   width: 100%;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.55);
 
   @media (max-width: 768px) {
     display: none;
@@ -32,7 +34,7 @@ export const Logo = styled(Link)`
   height: 100%;
   cursor: pointer;
   text-decoration: none;
-  font-style: italic;
+  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-size: 1.6rem;
   font-weight: bold;
@@ -63,9 +65,9 @@ export const NavMenuLinks = styled(Link)`
   border: none;
   cursor: pointer;
   text-decoration: none;
-  color: #808080;
+  color: #404040;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   transition: 0.3s ease-in-out;
 
   :hover {

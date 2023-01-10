@@ -15,6 +15,8 @@ export const Nav = styled.nav`
   position: fixed;
   width: 100%;
   display: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 99;
 
   @media (max-width: 768px) {
     display: flex;
@@ -22,16 +24,20 @@ export const Nav = styled.nav`
 `;
 
 export const Logo = styled(Link)`
-  color: #000;
+  color: #404040;
   display: flex;
   align-items: center;
   height: 100%;
   cursor: pointer;
   text-decoration: none;
-  font-style: italic;
+  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-size: 1.3rem;
   font-weight: bold;
+
+  &:hover {
+    color: #000;
+  }
 `;
 
 export const NavMenuAction = styled.div`
@@ -44,24 +50,24 @@ export const NavMenuAction = styled.div`
 `;
 
 export const Hamburguer = styled(BiMenuAltRight)`
-  color: #fd1e53;
+  color: #393939;
   font-size: 1.8rem;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 
   &:hover {
-    color: #70011b;
+    color: #000;
   }
 `;
 
 export const Cart = styled(BsFillCartFill)`
-  color: #fd1e53;
+  color: #393939;
   font-size: 1.3rem;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 
   &:hover {
-    color: #70011b;
+    color: #000;
   }
 `;
 
@@ -137,7 +143,7 @@ export const NavMenuLinks = styled.div`
 export const RegisterC = styled.div`
   display: flex;
   position: absolute;
-  bottom: 45%;
+  bottom: 25%;
   left: 0;
   right: 0;
   padding: 0.4rem;
@@ -158,7 +164,7 @@ export const RegisterC = styled.div`
 export const LoginC = styled.div`
   display: flex;
   position: absolute;
-  bottom: 52%;
+  bottom: 32%;
   left: 0;
   right: 0;
   padding: 0.4rem;

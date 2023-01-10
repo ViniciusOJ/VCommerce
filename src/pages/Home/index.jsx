@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Hero from "../../components/Hero/Hero";
 import Navbar from "../../components/Navbar/Navbar";
 import NavMobile from "../../components/NavMobile/NavMobile";
+import { SliderData } from "../../data/SliderData";
 import api from "../../services/api";
 
 function Home() {
@@ -22,6 +24,7 @@ function Home() {
     <>
       <Navbar />
       <NavMobile />
+      <Hero slides={SliderData} />
     </>
   );
 }
