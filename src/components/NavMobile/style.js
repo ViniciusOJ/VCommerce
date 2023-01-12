@@ -16,7 +16,7 @@ export const Nav = styled.nav`
   width: 100%;
   display: none;
   background-color: rgba(255, 255, 255, 0.6);
-  z-index: 99;
+  z-index: 2;
 
   @media (max-width: 768px) {
     display: flex;
@@ -30,7 +30,7 @@ export const Logo = styled(Link)`
   height: 100%;
   cursor: pointer;
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-size: 1.3rem;
   font-weight: bold;

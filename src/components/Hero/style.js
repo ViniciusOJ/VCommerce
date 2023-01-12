@@ -1,6 +1,15 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+
+const scale = keyframes`
+  0%{
+		transform: scale(1)
+	}
+	100%{
+		transform: scale(1.3)
+	}
+`;
 
 export const HeroSection = styled.section`
   height: 100vh;
@@ -20,7 +29,6 @@ export const HeroWrapper = styled.div`
 `;
 
 export const HeroSlide = styled.div`
-  z-index: 1;
   width: 100%;
   height: 100%;
 `;
@@ -37,7 +45,6 @@ export const HeroSlider = styled.div`
   &::before {
     content: "";
     position: absolute;
-    z-index: 2;
     width: 100%;
     height: 100vh;
     bottom: 0vh;
@@ -59,11 +66,11 @@ export const HeroImage = styled.img`
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  animation: ${scale} 14s infinite;
 `;
 
 export const HeroContent = styled.div`
   position: relative;
-  z-index: 10;
   display: flex;
   flex-direction: column;
   max-width: 1600px;
@@ -76,7 +83,7 @@ export const HeroContent = styled.div`
     font-size: clamp(1rem, 8vw, 2.3rem);
     font-weight: 400;
     text-transform: uppercase;
-    text-shadow: -2px 2px 1px rgba(0, 0, 0, 0.69);
+    text-shadow: -2px 2px 1px rgba(0, 0, 0, 0.4);
     text-align: left;
     margin-bottom: 0.8rem;
   }
@@ -93,6 +100,8 @@ export const Button = styled.button`
   gap: 4px;
   max-width: 300px;
   transition: 0.3s;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.6);
 
   &:hover {
     background-color: #fd1e53;
@@ -115,6 +124,7 @@ export const arrowButtons = css`
   padding: 10px;
   margin-right: 1rem;
   user-select: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .7);
   transition: 0.3s;
 
   &:hover {
@@ -128,7 +138,6 @@ export const SliderButtons = styled.div`
   bottom: 3rem;
   right: 3rem;
   display: flex;
-  z-index: 10;
 `;
 
 export const PrevArrow = styled(FiArrowLeft)`
