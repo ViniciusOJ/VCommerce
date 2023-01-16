@@ -15,20 +15,17 @@ import {
 } from "./style";
 import { menuData } from "../../data/MenuData";
 
-function NavMobile() {
+function NavMobile({ activeCartOpen }) {
   const [isMobile, setIsMobile] = useState(false);
 
-  const toggle = () => {
-    setIsMobile(!isMobile);
-  };
-
+  const toggle = () => setIsMobile(!isMobile);
   return (
     <Nav>
       <Logo to="/">
         <span style={{ color: "#FD1E53" }}>V</span> Commerce
       </Logo>
       <NavMenuAction>
-        <Cart />
+        <Cart onClick={activeCartOpen} />
         <Hamburguer onClick={toggle} />
       </NavMenuAction>
       <NavMenu isMobile={isMobile}>
@@ -41,7 +38,6 @@ function NavMobile() {
         <RegisterC>
           <Register /> Register
         </RegisterC>
-
         <LoginC>
           <Login /> Login
         </LoginC>

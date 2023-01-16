@@ -1,11 +1,15 @@
 import GlobalStyle from "./GlobalStyle";
+import CartProvider from "./hooks/cart";
+
 import RoutesApp from "./routes";
 
 function App() {
   return (
     <div className="App">
-      <GlobalStyle />
-      <RoutesApp />
+      <CartProvider>
+        <GlobalStyle />
+        <RoutesApp />
+      </CartProvider>
     </div>
   );
 }
