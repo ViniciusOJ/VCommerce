@@ -92,7 +92,7 @@ export const NavMenu = styled.div`
   position: absolute;
   right: ${({ isMobile }) => (isMobile ? "0" : "-100%")};
   top: 0;
-  width: 50%;
+  width: 70%;
   height: 100vh;
   opacity: ${({ isMobile }) => (isMobile ? "1" : "0")};
   flex-direction: column;
@@ -109,11 +109,15 @@ export const NavMenuLinks = styled.div`
   outline: none;
   border: none;
   cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
+
   font-weight: 500;
   transition: 0.5s ease-in;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+  }
 
   :hover {
     transform: translateY(-3px);

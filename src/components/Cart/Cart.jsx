@@ -18,24 +18,19 @@ import {
   ValueTotal,
   TitleCart,
   TitleCartItem,
+  ClearCart,
+  ItemClearCart,
 } from "./style";
 
 function Cart({ CartOpen, closeCart }) {
-  const { productsCart, removeProductToCart, aditionProductToCart } =
-    useContext(CartContext);
-
-  const calculateTotal = () => {
-    let total = 0;
-    let options = {
-      style: "decimal",
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    };
-    productsCart.forEach((item) => {
-      total += item.price * item.qtd;
-    });
-    return new Intl.NumberFormat("pt-BR", options).format(total);
-  };
+  const {
+    productsCart,
+    removeProductToCart,
+    aditionProductToCart,
+    clearCart,
+    calculateTotal,
+    checkOut,
+  } = useContext(CartContext);
 
   return (
     <ContainerCart CartOpen={CartOpen}>
@@ -46,6 +41,9 @@ function Cart({ CartOpen, closeCart }) {
 
       {productsCart.length > 0 && (
         <>
+          <ClearCart onClick={() => clearCart()}>
+            Clear Cart <ItemClearCart />
+          </ClearCart>
           {productsCart.map((item, index) => (
             <ItemContainer key={index}>
               <ItemImagemContainer>
@@ -63,9 +61,10 @@ function Cart({ CartOpen, closeCart }) {
             </ItemContainer>
           ))}
           <ValueTotal>
+            {" "}
             Sub Total: <span>$</span> {calculateTotal()}
           </ValueTotal>
-          <ContainerConfirmed>
+          <ContainerConfirmed to={`/checkout`} onClick={() => checkOut()}>
             <Confirmed /> Finalizar Pedido
           </ContainerConfirmed>
         </>

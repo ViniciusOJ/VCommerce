@@ -1,6 +1,5 @@
-import React, {useContext} from "react";
+import React from "react";
 import { menuData } from "../../data/MenuData";
-import { CartContext } from "../../hooks/cart";
 import {
   Nav,
   Logo,
@@ -11,20 +10,17 @@ import {
   Cart,
   Register,
   Login,
-  Menu,
 } from "./style";
 
 function Navbar({ activeCartOpen }) {
-  const { productsCart } = useContext(CartContext);
-
   return (
     <Nav>
-      <Logo to="/">
+      <Logo to={`/`}>
         <span style={{ color: "#FD1E53" }}>V</span> Commerce
       </Logo>
       <NavMenu>
         {menuData.map((item, index) => (
-          <NavMenuLinks to={item.link} href={item.id} key={index}>
+          <NavMenuLinks to={item.link} key={index}>
             {item.title}
           </NavMenuLinks>
         ))}

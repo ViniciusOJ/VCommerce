@@ -36,7 +36,7 @@ function ProductsPop({ popVisible, closePop, item }) {
             <span>{Math.round(item.rating > 0 ? item.rating : 1)}</span>
           </Stars>
           <Descrip>{item.description}</Descrip>
-          <Value>$ {item.price}</Value>
+          <Value>$ {item?.price?.toFixed(2)}</Value>
           <Buttons>
             <BuyP>Buy Now</BuyP>
             <CartP onClick={() => addProductToCart(item)}>Add to cart</CartP>

@@ -3,7 +3,7 @@ import iphone13 from "../images/productsimg/iphone-13.jpg";
 import macBookM1 from "../images/productsimg/macbook-m1.png";
 import applewatch from "../images/productsimg/apple-watch-se.png";
 
-export const productsData = [
+export const productsStatic = [
   {
     id: 1,
     title: "Iphone X",

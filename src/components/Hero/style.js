@@ -124,7 +124,7 @@ export const arrowButtons = css`
   padding: 10px;
   margin-right: 1rem;
   user-select: none;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .7);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
   transition: 0.3s;
 
   &:hover {

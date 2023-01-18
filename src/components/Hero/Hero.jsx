@@ -53,7 +53,7 @@ function Hero({ slides }) {
   }
 
   return (
-    <HeroSection>
+    <HeroSection id="home">
       <HeroWrapper>
         {slides.map((slide, index) => {
           return (

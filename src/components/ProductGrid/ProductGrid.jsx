@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { productsData } from "../../data/ProductsData";
 import {
   Container,
   TitleContainer,
@@ -12,8 +11,11 @@ import {
   Price,
 } from "./style";
 import ProductsPop from "../ProductsPop/ProductsPop";
+import { CartContext } from "../../hooks/cart";
 
 function ProductGrid() {
+  const { productsData } = useContext(CartContext);
+
   const [popVisible, setPopVisible] = useState(false);
   const [modalItem, setModalItem] = useState({});
   const activePop = (id) => {
@@ -24,7 +26,7 @@ function ProductGrid() {
 
   return (
     <>
-      <Container id="productContainer">
+      <Container id="products">
         <TitleContainer>All Products</TitleContainer>
         <ProductsContainer>
           {productsData.map((item, index) => (

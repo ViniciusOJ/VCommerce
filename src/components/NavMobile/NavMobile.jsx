@@ -31,8 +31,8 @@ function NavMobile({ activeCartOpen }) {
       <NavMenu isMobile={isMobile}>
         <Close onClick={toggle} />
         {menuData.map((item, index) => (
-          <NavMenuLinks key={index} to={item.link}>
-            {item.title}
+          <NavMenuLinks key={index}>
+            <a href={item.link}>{item.title}</a>
           </NavMenuLinks>
         ))}
         <RegisterC>

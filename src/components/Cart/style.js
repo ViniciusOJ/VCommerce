@@ -2,7 +2,8 @@ import styled, { css } from "styled-components";
 import { IoClose } from "react-icons/io5";
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 import { GiConfirmed } from "react-icons/gi";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineClear } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 export const ContainerCart = styled.div`
   transition: all 0.2s ease-in-out;
@@ -36,6 +37,10 @@ export const ContainerCart = styled.div`
 export const TitleCart = styled.h2`
   text-align: center;
   padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
 `;
 
 export const TitleCartItem = styled(AiOutlineShoppingCart)``;
@@ -54,6 +59,31 @@ export const ItemClose = styled(IoClose)`
     transform: scale(1.1);
     color: #000;
   }
+`;
+
+export const ClearCart = styled.button`
+  margin: 1rem auto;
+  height: 2rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #bf0000;
+  border-radius: 8px;
+  background: none;
+  color: #bf0000;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border: none;
+    background: #bf0000;
+    color: #fff;
+  }
+`;
+export const ItemClearCart = styled(AiOutlineClear)`
+  font-size: 1rem;
 `;
 
 export const ItemContainer = styled.div`
@@ -139,10 +169,9 @@ export const ItemValue = styled.span`
   font-weight: 600;
 `;
 
-export const ContainerConfirmed = styled.div`
-  width: 100%;
+export const ContainerConfirmed = styled(Link)`
   height: 3rem;
-  margin-top: 1rem;
+  margin: 2rem 0;
   border: 1px solid #2dc26e;
   border-radius: 0.5rem;
   display: flex;
@@ -153,6 +182,7 @@ export const ContainerConfirmed = styled.div`
   color: #2dc26e;
   gap: 0.5rem;
   transition: all 0.2s ease;
+  text-decoration: none;
   cursor: pointer;
 
   &:hover {
