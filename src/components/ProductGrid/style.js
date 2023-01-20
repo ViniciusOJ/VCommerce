@@ -30,7 +30,7 @@ export const ProductsContainer = styled.div`
 
 export const Product = styled.div`
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 2rem 2rem;
   background-color: #fff;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
   outline: 0.1rem solid #ccc;

@@ -30,6 +30,7 @@ function Cart({ CartOpen, closeCart }) {
     clearCart,
     calculateTotal,
     checkOut,
+    calculateValue,
   } = useContext(CartContext);
 
   return (
@@ -56,12 +57,11 @@ function Cart({ CartOpen, closeCart }) {
                   <ItemQuantity>{item.qtd}</ItemQuantity>
                   <ArrowRight onClick={() => aditionProductToCart(item.id)} />
                 </QuantityC>
-                <ItemValue>$ {(item.price * item.qtd).toFixed(2)}</ItemValue>
+                <ItemValue>$ {calculateValue(item.price * item.qtd)}</ItemValue>
               </ItemInfos>
             </ItemContainer>
           ))}
           <ValueTotal>
-            {" "}
             Sub Total: <span>$</span> {calculateTotal()}
           </ValueTotal>
           <ContainerConfirmed to={`/checkout`} onClick={() => checkOut()}>

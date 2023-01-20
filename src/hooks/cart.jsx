@@ -107,6 +107,7 @@ export default function CartProvider({ children }) {
   ]);
   const [totalPurchase, setTotalPurchase] = useState(0);
   const [cartOpen, setCartOpen] = useState(false);
+  const [hiddenCart, setHiddenCart] = useState(false);
 
   // Status Cart Open/Cose
   const CartStatus = () => {
@@ -187,6 +188,18 @@ export default function CartProvider({ children }) {
   // Check-out - TotalPrice
   const checkOut = () => {
     setTotalPurchase(total);
+    setCartOpen(false);
+    setHiddenCart(true);
+  };
+
+  // Format Number
+  const calculateValue = (value) => {
+    let options = {
+      style: "decimal",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    };
+    return new Intl.NumberFormat("pt-BR", options).format(value);
   };
 
   return (
@@ -204,6 +217,9 @@ export default function CartProvider({ children }) {
         total,
         checkOut,
         totalPurchase,
+        calculateValue,
+        hiddenCart,
+        setHiddenCart,
       }}
     >
       {children}

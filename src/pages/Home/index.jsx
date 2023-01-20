@@ -6,7 +6,8 @@ import { SliderData } from "../../data/SliderData";
 import { CartContext } from "../../hooks/cart";
 
 function Home() {
-  const { cartOpen, CartStatus } = useContext(CartContext);
+  const { cartOpen, CartStatus, setHiddenCart } = useContext(CartContext);
+  setHiddenCart(false);
 
   return (
     <>

@@ -74,13 +74,6 @@ export const ClearCart = styled.button`
   color: #bf0000;
   gap: 0.6rem;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    border: none;
-    background: #bf0000;
-    color: #fff;
-  }
 `;
 export const ItemClearCart = styled(AiOutlineClear)`
   font-size: 1rem;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Logo,
   Nav,
@@ -14,10 +14,11 @@ import {
   Login,
 } from "./style";
 import { menuData } from "../../data/MenuData";
+import { CartContext } from "../../hooks/cart";
 
 function NavMobile({ activeCartOpen }) {
   const [isMobile, setIsMobile] = useState(false);
-
+  const { hiddenCart } = useContext(CartContext);
   const toggle = () => setIsMobile(!isMobile);
   return (
     <Nav>
@@ -25,7 +26,12 @@ function NavMobile({ activeCartOpen }) {
         <span style={{ color: "#FD1E53" }}>V</span> Commerce
       </Logo>
       <NavMenuAction>
-        <Cart onClick={activeCartOpen} />
+        {hiddenCart ? (
+          <Cart onClick={activeCartOpen} style={{ display: "none" }} />
+        ) : (
+          <Cart onClick={activeCartOpen} />
+        )}
+
         <Hamburguer onClick={toggle} />
       </NavMenuAction>
       <NavMenu isMobile={isMobile}>

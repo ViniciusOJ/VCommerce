@@ -14,7 +14,7 @@ import ProductsPop from "../ProductsPop/ProductsPop";
 import { CartContext } from "../../hooks/cart";
 
 function ProductGrid() {
-  const { productsData } = useContext(CartContext);
+  const { productsData, calculateValue } = useContext(CartContext);
 
   const [popVisible, setPopVisible] = useState(false);
   const [modalItem, setModalItem] = useState({});
@@ -43,7 +43,7 @@ function ProductGrid() {
                 )}
                 <span>{Math.round(item.rating > 0 ? item.rating : 1)}</span>
               </Stars>
-              <Price> $ {item.price.toFixed(2)}</Price>
+              <Price> $ {calculateValue(item.price)}</Price>
             </Product>
           ))}
         </ProductsContainer>

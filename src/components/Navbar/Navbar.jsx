@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { menuData } from "../../data/MenuData";
+import { CartContext } from "../../hooks/cart";
 import {
   Nav,
   Logo,
@@ -13,6 +14,8 @@ import {
 } from "./style";
 
 function Navbar({ activeCartOpen }) {
+  const { hiddenCart } = useContext(CartContext);
+
   return (
     <Nav>
       <Logo to={`/`}>
@@ -33,10 +36,18 @@ function Navbar({ activeCartOpen }) {
           <Register />
           Register
         </NavActionLinks>
-        <NavActionLinks onClick={activeCartOpen}>
-          <Cart />
-          Cart
-        </NavActionLinks>
+
+        {hiddenCart ? (
+          <NavActionLinks style={{ display: "none" }} onClick={activeCartOpen}>
+            <Cart />
+            Cart
+          </NavActionLinks>
+        ) : (
+          <NavActionLinks onClick={activeCartOpen}>
+            <Cart />
+            Cart
+          </NavActionLinks>
+        )}
       </NavMenuAction>
     </Nav>
   );

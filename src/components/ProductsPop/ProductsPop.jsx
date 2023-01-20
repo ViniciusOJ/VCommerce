@@ -16,7 +16,7 @@ import {
 import { CartContext } from "../../hooks/cart";
 
 function ProductsPop({ popVisible, closePop, item }) {
-  const { addProductToCart } = useContext(CartContext);
+  const { addProductToCart, calculateValue } = useContext(CartContext);
 
   return (
     <ProductPopUp popVisible={popVisible}>
@@ -36,7 +36,7 @@ function ProductsPop({ popVisible, closePop, item }) {
             <span>{Math.round(item.rating > 0 ? item.rating : 1)}</span>
           </Stars>
           <Descrip>{item.description}</Descrip>
-          <Value>$ {item?.price?.toFixed(2)}</Value>
+          <Value>$ {calculateValue(item?.price)}</Value>
           <Buttons>
             <BuyP>Buy Now</BuyP>
             <CartP onClick={() => addProductToCart(item)}>Add to cart</CartP>
